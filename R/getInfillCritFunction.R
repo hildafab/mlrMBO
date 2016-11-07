@@ -11,6 +11,7 @@ getInfillCritFunction = function(infill.crit) {
     mean = infillCritMeanResponse,
     se = infillCritStandardError,
     ei = infillCritEI,
+    eimtl = infillCritEIMtL,
     aei = infillCritAEI,
     cb = infillCritCB,
     # akg = infillCritAKG,

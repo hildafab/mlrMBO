@@ -143,6 +143,8 @@ setMBOControlInfill = function(control,
   crit.cb.pi = NULL,
   crit.cb.inflate.se = NULL,
   crit.aei.use.nugget = NULL,
+  crit.eimtl.openmldid = NULL,
+  crit.eimtl.parset = NULL,
   filter.proposed.points = NULL,
   filter.proposed.points.tol = NULL,
   opt = "focussearch", opt.restarts = NULL,
@@ -261,6 +263,9 @@ setMBOControlInfill = function(control,
 
   control$infill.opt.nsga2.mdist = coalesce(opt.nsga2.mdist, control$infill.opt.nsga2.mdist, 10)
   assertNumber(control$infill.opt.nsga2.mdist, lower = 1e-16, na.ok = FALSE, finite  = TRUE)
+  
+  control$infill.crit.eimtl.openmldid = crit.eimtl.openmldid
+  control$infill.crit.eimtl.parset = crit.eimtl.parset
 
   return(control)
 }
