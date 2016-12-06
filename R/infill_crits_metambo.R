@@ -1,6 +1,6 @@
 # EXPECTED IMPROVEMENT WITH Meta-Learning
 # (useful for deterministic, for noisy only with reinterpolation)
-infillCritEIMtL = function(points, models, control, par.set, design, iter) {
+infillCritEIMtL = function(points, models, control, par.set, design, iter, attributes = FALSE) {
   points = points[order(points$selected.learner),]
   model = models[[1L]]
   maximize.mult = ifelse(control$minimize, 1, -1)
@@ -27,7 +27,7 @@ infillCritEIMtL = function(points, models, control, par.set, design, iter) {
   perf = maximize.mult * perf
   #perf = 1
   #   options(error = browser())
-  decay = control$eimtl.decay.param  
+  decay = control$infill.crit.eimtl.decay.param  
   ei = ((1 - (decay ^ iter)) * ei) + (perf * (decay ^ iter))
   
   # FIXME: magic number
