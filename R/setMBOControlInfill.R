@@ -144,6 +144,7 @@ setMBOControlInfill = function(control,
   crit.cb.inflate.se = NULL,
   crit.aei.use.nugget = NULL,
   crit.eimtl.openmldid = NULL,
+  crit.eimtl.decay.param = 0.998,
   crit.eimtl.parset = NULL,
   filter.proposed.points = NULL,
   filter.proposed.points.tol = NULL,
@@ -266,6 +267,7 @@ setMBOControlInfill = function(control,
   
   control$infill.crit.eimtl.openmldid = crit.eimtl.openmldid
   control$infill.crit.eimtl.parset = crit.eimtl.parset
+  control$infill.crit.eimtl.decay.param = crit.eimtl.decay.param
 
   return(control)
 }

@@ -27,7 +27,8 @@ infillCritEIMtL = function(points, models, control, par.set, design, iter) {
   perf <- maximize.mult * perf
   #perf = 1
   #   options(error = browser())
-  ei = ((1 - (0.998 ^ iter)) * ei) + (perf * (0.998 ^ iter))
+  decay <- control$eimtl.decay.param  
+  ei = ((1 - (decay ^ iter)) * ei) + (perf * (decay ^ iter))
   
   # FIXME: magic number
   # if se too low set 0 (numerical problems), negate due to minimization
