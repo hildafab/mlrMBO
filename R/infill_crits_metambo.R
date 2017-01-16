@@ -34,7 +34,7 @@ infillCritEIMtL = function(points, models, control, par.set, design, iter, attri
   # if se too low set 0 (numerical problems), negate due to minimization
   res = ifelse(p.se < 1e-6, 0, -ei)
   
-  if (attributes) {
+  if (FALSE) {
     res = setAttribute(res, "crit.components", data.frame(se = p$se, mean = p$response))
   }
   return(res)
