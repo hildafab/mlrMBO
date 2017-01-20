@@ -23,7 +23,7 @@ infillCritEIMtL = function(points, models, control, par.set, design, iter, attri
   dataset.metafeatures = getMetaDataForDataset(did=openml.did)
   parset.with.trafo = control$infill.crit.eimtl.parset
   #get performance for the point based on the meta features and hyper parameters  
-  perf = getPerformanceFromMetaInfo(points,dataset.metafeatures,parset.with.trafo)
+  perf = getPerformanceFromMetaInfo(points, dataset.metafeatures, parset.with.trafo)
   perf = maximize.mult * perf
   #perf = 1
   #   options(error = browser())

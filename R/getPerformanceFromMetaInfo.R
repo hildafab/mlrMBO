@@ -1,5 +1,6 @@
 getPerformanceFromMetaInfo = function(points,dataset.metafeatures,par.set){ 
-  #   print("Getting performance predictions")
+  
+   #   print("Getting performance predictions")
   pred.perf = list()
   i = 1
   #for each point
@@ -45,6 +46,10 @@ getPerformanceFromMetaInfo = function(points,dataset.metafeatures,par.set){
     }else{
       point.to.predict = dataset.metafeatures
     }
+    
+    
+    #FIXME: This is stupid and should not happen, but the code is garbage anyways and has to be rewirrten
+    point.to.predict = impute(point.to.predict, classes = list(numeric = imputeConstant(0)))$data
     
     #predict performance
     perf = predict(object=model, newdata=point.to.predict)
