@@ -49,7 +49,8 @@ getPerformanceFromMetaInfo = function(points,dataset.metafeatures,par.set){
     
     
     #FIXME: This is stupid and should not happen, but the code is garbage anyways and has to be rewirrten
-    point.to.predict = impute(point.to.predict, classes = list(numeric = imputeConstant(0)))$data
+    point.to.predict = impute(point.to.predict, classes = list(numeric = imputeConstant(0), 
+      factor = imputeMode()))$data
     
     #predict performance
     perf = predict(object=model, newdata=point.to.predict)
